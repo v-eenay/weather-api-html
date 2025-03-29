@@ -91,6 +91,82 @@ header h1 {
     transition: color 0.5s ease;
 }
 
+/* Navigation styles */
+#main-nav {
+    margin-top: 1rem;
+}
+
+#main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+#main-nav li {
+    margin: 0;
+}
+
+.nav-button {
+    padding: 0.7rem 1.2rem;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.nav-button:hover {
+    background-color: rgba(224, 30, 90, 0.1);
+    color: #E01E5A;
+}
+
+.nav-button.active {
+    background-color: #E01E5A;
+    color: white;
+}
+
+.nav-button:active {
+    transform: translateY(1px);
+}
+
+/* Page section styles */
+.page-section {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    margin-bottom: 0;
+}
+
+.page-section.active {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 2rem;
+    overflow: visible;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.section-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
 /* Main content styles */
 main {
     padding: 2rem 0;
@@ -143,6 +219,10 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     border-left: 4px solid #4a90e2;
+}
+
+.section-content {
+    margin-bottom: 1.5rem;
 }
 
 .location-description {
@@ -423,6 +503,125 @@ button:active {
 .city-country {
     color: #888;
     font-size: 0.8rem;
+}
+
+/* Popular Destinations */
+#popular-destinations {
+    margin-top: 2rem;
+}
+
+.popular-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.popular-city-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.popular-city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.city-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.city-info {
+    padding: 1rem;
+}
+
+.city-info h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.city-country {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Province, Region, and Continent Selectors */
+.province-selector, .region-selector, .continent-selector {
+    margin-bottom: 2rem;
+}
+
+.province-buttons, .region-buttons, .continent-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.province-button, .region-button, .continent-button {
+    padding: 0.7rem 1.2rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.province-button:hover, .region-button:hover, .continent-button:hover {
+    background-color: rgba(224, 30, 90, 0.1);
+    color: #E01E5A;
+}
+
+.province-button.active, .region-button.active, .continent-button.active {
+    background-color: #E01E5A;
+    color: white;
+}
+
+.province-cities-container, .region-cities-container, .continent-cities-container {
+    margin-top: 1.5rem;
+}
+
+.province-instruction, .region-instruction, .continent-instruction {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.city-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.city-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.city-name {
+    font-weight: 500;
+    color: #333;
 }
 
 /* Loading and error styles */

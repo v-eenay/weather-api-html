@@ -11,10 +11,12 @@ const forecastCardsContainer = document.getElementById('forecast-cards');
 const currentLocationSection = document.getElementById('current-location-weather');
 const locationForecastContainer = document.getElementById('location-forecast-container');
 const refreshLocationBtn = document.getElementById('refresh-location');
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabContents = document.querySelectorAll('.tab-content');
+const navButtons = document.querySelectorAll('.nav-button');
+const pageSections = document.querySelectorAll('.page-section');
 const provinceCitiesContainer = document.getElementById('province-cities');
 const popularCitiesGrid = document.querySelector('.popular-cities-grid');
+const regionCitiesContainer = document.getElementById('region-cities');
+const continentCitiesContainer = document.getElementById('continent-cities');
 
 // Weather condition mapping for 7Timer API with enhanced descriptions
 const weatherConditions = {
@@ -139,13 +141,100 @@ const popularCities = [
     { city: 'Lukla', country: 'Nepal', province: 'Province 1', image: 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5lcGFsJTIwY2l0eXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60' }
 ];
 
+// Asian regions and their countries
+const asianRegions = {
+    'East Asia': ['China', 'Japan', 'South Korea', 'North Korea', 'Taiwan', 'Mongolia'],
+    'Southeast Asia': ['Thailand', 'Vietnam', 'Indonesia', 'Malaysia', 'Philippines', 'Singapore', 'Myanmar', 'Cambodia', 'Laos', 'Brunei', 'Timor-Leste'],
+    'South Asia': ['India', 'Pakistan', 'Bangladesh', 'Sri Lanka', 'Bhutan', 'Maldives', 'Afghanistan'],
+    'Central Asia': ['Kazakhstan', 'Uzbekistan', 'Kyrgyzstan', 'Tajikistan', 'Turkmenistan'],
+    'West Asia': ['Turkey', 'Iran', 'Saudi Arabia', 'UAE', 'Qatar', 'Kuwait', 'Oman', 'Bahrain', 'Yemen', 'Iraq', 'Syria', 'Jordan', 'Lebanon', 'Israel', 'Palestine']
+};
+
+// Continents and their countries
+const continents = {
+    'Europe': ['United Kingdom', 'France', 'Germany', 'Italy', 'Spain', 'Russia', 'Ukraine', 'Poland', 'Romania', 'Netherlands', 'Belgium', 'Sweden', 'Portugal', 'Greece', 'Czech Republic', 'Switzerland', 'Austria', 'Denmark', 'Finland', 'Norway', 'Ireland'],
+    'North America': ['United States', 'Canada', 'Mexico', 'Cuba', 'Jamaica', 'Haiti', 'Dominican Republic', 'Costa Rica', 'Panama'],
+    'South America': ['Brazil', 'Argentina', 'Colombia', 'Peru', 'Chile', 'Ecuador', 'Venezuela', 'Bolivia', 'Uruguay', 'Paraguay'],
+    'Africa': ['Egypt', 'Nigeria', 'South Africa', 'Kenya', 'Ethiopia', 'Tanzania', 'Morocco', 'Algeria', 'Tunisia', 'Ghana', 'Senegal'],
+    'Oceania': ['Australia', 'New Zealand', 'Papua New Guinea', 'Fiji', 'Solomon Islands', 'Vanuatu']
+};
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     loadCities();
     setupEventListeners();
-    setupTabNavigation();
+    setupNavigation();
     getUserLocation();
 });
+
+// Set up navigation between sections
+function setupNavigation() {
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and sections
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            pageSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding section
+            const sectionId = button.dataset.section + '-section';
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Hide forecast container when switching sections
+            forecastContainer.classList.add('hidden');
+        });
+    });
+    
+    // Set up province buttons
+    const provinceButtons = document.querySelectorAll('.province-button');
+    provinceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all province buttons
+            provinceButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show cities for selected province
+            const province = button.dataset.province;
+            showProvinceCities(province);
+        });
+    });
+    
+    // Set up region buttons
+    const regionButtons = document.querySelectorAll('.region-button');
+    regionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all region buttons
+            regionButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show cities for selected region
+            const region = button.dataset.region;
+            showRegionCities(region);
+        });
+    });
+    
+    // Set up continent buttons
+    const continentButtons = document.querySelectorAll('.continent-button');
+    continentButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all continent buttons
+            continentButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show cities for selected continent
+            const continent = button.dataset.continent;
+            showContinentCities(continent);
+        });
+    });
+}
 
 // Load cities from CSV file
 async function loadCities() {
@@ -178,19 +267,55 @@ async function loadCities() {
             return a.country.localeCompare(b.country);
         });
         
-        // Populate city dropdown
+        // Populate city dropdown (if it exists in this layout)
         populateCityDropdown();
         
         // Populate popular cities
         populatePopularCities();
+        
+        // Initialize the first province, region, and continent if buttons exist
+        initializeSelectors();
     } catch (error) {
         console.error('Error loading cities:', error);
         showError();
     }
 }
 
+// Initialize selectors for provinces, regions, and continents
+function initializeSelectors() {
+    // Initialize first province if province buttons exist
+    const provinceButtons = document.querySelectorAll('.province-button');
+    if (provinceButtons.length > 0) {
+        provinceButtons[0].classList.add('active');
+        const firstProvince = provinceButtons[0].dataset.province;
+        showProvinceCities(firstProvince);
+    }
+    
+    // Initialize first region if region buttons exist
+    const regionButtons = document.querySelectorAll('.region-button');
+    if (regionButtons.length > 0) {
+        regionButtons[0].classList.add('active');
+        const firstRegion = regionButtons[0].dataset.region;
+        showRegionCities(firstRegion);
+    }
+    
+    // Initialize first continent if continent buttons exist
+    const continentButtons = document.querySelectorAll('.continent-button');
+    if (continentButtons.length > 0) {
+        continentButtons[0].classList.add('active');
+        const firstContinent = continentButtons[0].dataset.continent;
+        showContinentCities(firstContinent);
+    }
+}
+
 // Populate city dropdown with options
 function populateCityDropdown() {
+    // Check if citySelect exists in the new layout
+    if (!citySelect) {
+        console.log('City select dropdown not found in this layout');
+        return;
+    }
+    
     // Group cities by country
     const countriesMap = {};
     
@@ -254,6 +379,12 @@ function populateCityDropdown() {
 
 // Populate popular cities
 function populatePopularCities() {
+    // Check if popularCitiesGrid exists in the new layout
+    if (!popularCitiesGrid) {
+        console.log('Popular cities grid not found in this layout');
+        return;
+    }
+    
     popularCitiesGrid.innerHTML = '';
     
     popularCities.forEach(popularCity => {
@@ -302,10 +433,15 @@ function setupTabNavigation() {
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
             
-            // Add active class to clicked button and corresponding content
+            // Add active class to clicked button
             button.classList.add('active');
+            
+            // Show corresponding content
             const tabId = button.dataset.tab;
             document.getElementById(tabId).classList.add('active');
+            
+            // Hide forecast container when switching sections
+            forecastContainer.classList.add('hidden');
         });
     });
     
@@ -328,6 +464,12 @@ function setupTabNavigation() {
 
 // Show cities for selected province
 function showProvinceCities(province) {
+    // Check if provinceCitiesContainer exists in the new layout
+    if (!provinceCitiesContainer) {
+        console.log('Province cities container not found in this layout');
+        return;
+    }
+    
     const provinceCities = cities.filter(city => 
         city.country === 'Nepal' && 
         city.province === province
@@ -369,6 +511,166 @@ function showProvinceCities(province) {
     } else {
         provinceCitiesContainer.innerHTML = `
             <p class="province-instruction">No cities found for ${province}</p>
+        `;
+    }
+}
+
+// Show cities for selected region
+function showRegionCities(region) {
+    // Check if regionCitiesContainer exists in the new layout
+    if (!regionCitiesContainer) {
+        console.log('Region cities container not found in this layout');
+        return;
+    }
+    
+    const regionCountries = asianRegions[region] || [];
+    
+    const regionCities = cities.filter(city => 
+        regionCountries.includes(city.country)
+    );
+    
+    if (regionCities.length > 0) {
+        regionCitiesContainer.innerHTML = '';
+        
+        const cityGrid = document.createElement('div');
+        cityGrid.className = 'city-grid';
+        
+        // Group cities by country
+        const countriesMap = {};
+        
+        regionCities.forEach(city => {
+            if (!countriesMap[city.country]) {
+                countriesMap[city.country] = [];
+            }
+            countriesMap[city.country].push(city);
+        });
+        
+        // Create a section for each country
+        Object.keys(countriesMap).sort().forEach(country => {
+            const countrySection = document.createElement('div');
+            countrySection.className = 'country-section';
+            
+            const countryHeader = document.createElement('h4');
+            countryHeader.textContent = country;
+            countrySection.appendChild(countryHeader);
+            
+            const countryCities = document.createElement('div');
+            countryCities.className = 'city-grid';
+            
+            countriesMap[country].sort((a, b) => a.city.localeCompare(b.city)).forEach(city => {
+                const cityCard = document.createElement('div');
+                cityCard.className = 'city-card';
+                cityCard.dataset.lat = city.latitude;
+                cityCard.dataset.lon = city.longitude;
+                
+                cityCard.innerHTML = `
+                    <p class="city-name">${city.city}</p>
+                `;
+                
+                cityCard.addEventListener('click', () => {
+                    const lat = parseFloat(cityCard.dataset.lat);
+                    const lon = parseFloat(cityCard.dataset.lon);
+                    const selectedCity = cities.find(c => 
+                        c.latitude === lat && 
+                        c.longitude === lon
+                    );
+                    
+                    if (selectedCity) {
+                        fetchWeatherForecast(selectedCity);
+                    }
+                });
+                
+                countryCities.appendChild(cityCard);
+            });
+            
+            countrySection.appendChild(countryCities);
+            cityGrid.appendChild(countrySection);
+        });
+        
+        regionCitiesContainer.appendChild(cityGrid);
+    } else {
+        regionCitiesContainer.innerHTML = `
+            <p class="region-instruction">No cities found for ${region}</p>
+        `;
+    }
+}
+
+// Show cities for selected continent
+function showContinentCities(continent) {
+    // Check if continentCitiesContainer exists in the new layout
+    if (!continentCitiesContainer) {
+        console.log('Continent cities container not found in this layout');
+        return;
+    }
+    
+    const continentCountries = continents[continent] || [];
+    
+    const continentCities = cities.filter(city => 
+        continentCountries.includes(city.country)
+    );
+    
+    if (continentCities.length > 0) {
+        continentCitiesContainer.innerHTML = '';
+        
+        const cityGrid = document.createElement('div');
+        cityGrid.className = 'city-grid';
+        
+        // Group cities by country
+        const countriesMap = {};
+        
+        continentCities.forEach(city => {
+            if (!countriesMap[city.country]) {
+                countriesMap[city.country] = [];
+            }
+            countriesMap[city.country].push(city);
+        });
+        
+        // Create a section for each country
+        Object.keys(countriesMap).sort().forEach(country => {
+            const countrySection = document.createElement('div');
+            countrySection.className = 'country-section';
+            
+            const countryHeader = document.createElement('h4');
+            countryHeader.textContent = country;
+            countrySection.appendChild(countryHeader);
+            
+            const countryCities = document.createElement('div');
+            countryCities.className = 'city-grid';
+            
+            countriesMap[country].sort((a, b) => a.city.localeCompare(b.city)).forEach(city => {
+                const cityCard = document.createElement('div');
+                cityCard.className = 'city-card';
+                cityCard.dataset.lat = city.latitude;
+                cityCard.dataset.lon = city.longitude;
+                
+                cityCard.innerHTML = `
+                    <p class="city-name">${city.city}</p>
+                `;
+                
+                cityCard.addEventListener('click', () => {
+                    const lat = parseFloat(cityCard.dataset.lat);
+                    const lon = parseFloat(cityCard.dataset.lon);
+                    const selectedCity = cities.find(c => 
+                        c.latitude === lat && 
+                        c.longitude === lon
+                    );
+                    
+                    if (selectedCity) {
+                        fetchWeatherForecast(selectedCity);
+                    }
+                });
+                
+                countryCities.appendChild(cityCard);
+            });
+            
+            countrySection.appendChild(countryCities);
+            cityGrid.appendChild(countrySection);
+        });
+        
+        continentCitiesContainer.appendChild(cityGrid);
+    } else {
+        continentCitiesContainer.innerHTML = `
+            <p class="continent-instruction">No cities found for ${continent}</p>
         `;
     }
 }
@@ -498,17 +800,22 @@ function displayLocationForecast(city, data) {
 
 // Set up event listeners
 function setupEventListeners() {
-    getForecastBtn.addEventListener('click', handleGetForecast);
+    // Only add event listeners if elements exist
+    if (refreshLocationBtn) {
+        refreshLocationBtn.addEventListener('click', getUserLocation);
+    }
     
-    // Allow pressing Enter in the select to get forecast
-    citySelect.addEventListener('keyup', (event) => {
-        if (event.key === 'Enter') {
-            handleGetForecast();
-        }
-    });
-    
-    // Refresh location button
-    refreshLocationBtn.addEventListener('click', getUserLocation);
+    // The dropdown and get forecast button may not exist in the new layout
+    if (getForecastBtn && citySelect) {
+        getForecastBtn.addEventListener('click', handleGetForecast);
+        
+        // Allow pressing Enter in the select to get forecast
+        citySelect.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                handleGetForecast();
+            }
+        });
+    }
 }
 
 // Handle get forecast button click
