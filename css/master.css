@@ -1,0 +1,864 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #ffffff;
+    color: #333;
+    padding: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #DC143C 50%, #003893 50%);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.nepal-flag {
+    position: relative;
+    width: 30px;
+    height: 36px;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.flag-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 18px solid #003893;
+}
+
+.flag-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 18px solid #DC143C;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #E01E5A;
+    transition: color 0.5s ease;
+}
+
+.tagline {
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+    font-weight: 300;
+    transition: color 0.5s ease;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: color 0.5s ease;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #E01E5A;
+    transition: background-color 0.5s ease;
+}
+
+h3 {
+    color: #E01E5A;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.5s ease;
+}
+
+/* Current Location Weather Section */
+#current-location-weather {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #4a90e2;
+}
+
+.location-description {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+#location-forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.location-actions {
+    margin-top: 1rem;
+}
+
+.secondary-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+}
+
+.secondary-button:active {
+    transform: translateY(1px);
+}
+
+/* City selection styles */
+.city-selection {
+    text-align: center;
+}
+
+.selection-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Selection Tabs */
+.selection-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.tab-button {
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    color: #666;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+.tab-button:hover {
+    color: #E01E5A;
+}
+
+.tab-button.active {
+    color: #E01E5A;
+    border-bottom: 2px solid #E01E5A;
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Dropdown Selection Tab */
+.selection-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+select {
+    padding: 0.7rem 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 250px;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #E01E5A;
+    box-shadow: 0 0 0 3px rgba(224, 30, 90, 0.1);
+}
+
+optgroup {
+    font-weight: 500;
+    color: #333;
+}
+
+optgroup option {
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+button {
+    padding: 0.7rem 1.5rem;
+    background-color: #E01E5A;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #C41E51;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Nepal Provinces Tab */
+.provinces-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.province-selector {
+    text-align: center;
+}
+
+.province-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.province-button {
+    padding: 0.6rem 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, border-color 0.2s;
+}
+
+.province-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.province-button.active {
+    background-color: #E01E5A;
+    color: white;
+    border-color: #E01E5A;
+}
+
+.province-cities {
+    margin-top: 1.5rem;
+    min-height: 150px;
+}
+
+.province-instruction {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.city-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.city-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    border-color: #E01E5A;
+}
+
+.city-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Popular Cities Tab */
+.popular-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.popular-city-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.popular-city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.city-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.city-info {
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.city-info h4 {
+    margin-bottom: 0.3rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.city-country {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Loading and error styles */
+.hidden {
+    display: none;
+}
+
+#loading, #error-message {
+    text-align: center;
+    padding: 2rem;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #E01E5A;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Forecast styles */
+.current-city {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#city-coordinates {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.forecast-description {
+    color: #666;
+    margin-top: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forecast-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.forecast-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-date {
+    font-weight: 500;
+    color: #E01E5A;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    transition: color 0.5s ease;
+}
+
+.forecast-date-en {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+    transition: color 0.5s ease;
+}
+
+.forecast-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0.5rem 0;
+    object-fit: contain;
+}
+
+.forecast-temp {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+.forecast-details {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+    transition: color 0.5s ease;
+}
+
+.forecast-details p {
+    margin-bottom: 0.25rem;
+}
+
+/* Travel tips styles */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tips-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tip {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: background-color 0.5s ease;
+}
+
+.tip p {
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.5s ease;
+}
+
+/* Footer styles */
+footer {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    border-top: 1px solid #eaeaea;
+    margin-top: 2rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.5s ease;
+}
+
+footer a {
+    color: #E01E5A;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #C41E51;
+    text-decoration: underline;
+}
+
+.copyright-text {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .selection-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    select {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .forecast-cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .selection-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .province-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .province-button {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .city-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .popular-cities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+/* Weather-based themes */
+/* Clear sky theme */
+.theme-clear {
+    background-color: #f0f8ff;
+}
+
+.theme-clear header {
+    background-color: #e6f2ff;
+}
+
+.theme-clear h2::after {
+    background-color: #4a90e2;
+}
+
+.theme-clear h3, 
+.theme-clear .forecast-date {
+    color: #4a90e2;
+}
+
+.theme-clear button {
+    background-color: #4a90e2;
+}
+
+.theme-clear button:hover {
+    background-color: #3a80d2;
+}
+
+.theme-clear header h1 {
+    color: #4a90e2;
+}
+
+/* Cloudy theme */
+.theme-cloudy {
+    background-color: #f5f5f5;
+}
+
+.theme-cloudy header {
+    background-color: #e9e9e9;
+}
+
+.theme-cloudy h2::after {
+    background-color: #607d8b;
+}
+
+.theme-cloudy h3, 
+.theme-cloudy .forecast-date {
+    color: #607d8b;
+}
+
+.theme-cloudy button {
+    background-color: #607d8b;
+}
+
+.theme-cloudy button:hover {
+    background-color: #546e7a;
+}
+
+.theme-cloudy header h1 {
+    color: #607d8b;
+}
+
+/* Rainy theme */
+.theme-rain {
+    background-color: #eef2f7;
+}
+
+.theme-rain header {
+    background-color: #e1e8f0;
+}
+
+.theme-rain h2::after {
+    background-color: #3f51b5;
+}
+
+.theme-rain h3, 
+.theme-rain .forecast-date {
+    color: #3f51b5;
+}
+
+.theme-rain button {
+    background-color: #3f51b5;
+}
+
+.theme-rain button:hover {
+    background-color: #303f9f;
+}
+
+.theme-rain header h1 {
+    color: #3f51b5;
+}
+
+/* Snow theme */
+.theme-snow {
+    background-color: #f8f9fa;
+}
+
+.theme-snow header {
+    background-color: #f1f3f5;
+}
+
+.theme-snow h2::after {
+    background-color: #5c6bc0;
+}
+
+.theme-snow h3, 
+.theme-snow .forecast-date {
+    color: #5c6bc0;
+}
+
+.theme-snow button {
+    background-color: #5c6bc0;
+}
+
+.theme-snow button:hover {
+    background-color: #4a59b4;
+}
+
+.theme-snow header h1 {
+    color: #5c6bc0;
+}
+
+/* Thunderstorm theme */
+.theme-storm {
+    background-color: #e8eaf6;
+}
+
+.theme-storm header {
+    background-color: #d1d6ef;
+}
+
+.theme-storm h2::after {
+    background-color: #512da8;
+}
+
+.theme-storm h3, 
+.theme-storm .forecast-date {
+    color: #512da8;
+}
+
+.theme-storm button {
+    background-color: #512da8;
+}
+
+.theme-storm button:hover {
+    background-color: #4527a0;
+}
+
+.theme-storm header h1 {
+    color: #512da8;
+}
+
+/* Windy theme */
+.theme-windy {
+    background-color: #e3f2fd;
+}
+
+.theme-windy header {
+    background-color: #d0e8fb;
+}
+
+.theme-windy h2::after {
+    background-color: #00897b;
+}
+
+.theme-windy h3, 
+.theme-windy .forecast-date {
+    color: #00897b;
+}
+
+.theme-windy button {
+    background-color: #00897b;
+}
+
+.theme-windy button:hover {
+    background-color: #00796b;
+}
+
+.theme-windy header h1 {
+    color: #00897b;
+}
+
+/* Foggy theme */
+.theme-fog {
+    background-color: #eceff1;
+}
+
+.theme-fog header {
+    background-color: #dfe3e6;
+}
+
+.theme-fog h2::after {
+    background-color: #78909c;
+}
+
+.theme-fog h3, 
+.theme-fog .forecast-date {
+    color: #78909c;
+}
+
+.theme-fog button {
+    background-color: #78909c;
+}
+
+.theme-fog button:hover {
+    background-color: #607d8b;
+}
+
+.theme-fog header h1 {
+    color: #78909c;
+}

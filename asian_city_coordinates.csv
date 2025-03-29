@@ -1,0 +1,237 @@
+latitude,longitude,city,country,province
+27.7172,85.3240,Kathmandu,Nepal,Bagmati
+28.2096,83.9856,Pokhara,Nepal,Gandaki
+26.4525,87.2701,Biratnagar,Nepal,Province 1
+27.6553,85.3188,Lalitpur,Nepal,Bagmati
+27.6710,85.4298,Bhaktapur,Nepal,Bagmati
+28.9985,80.1686,Dhangadhi,Nepal,Sudurpashchim
+26.8065,87.2846,Dharan,Nepal,Province 1
+28.3102,84.4134,Besisahar,Nepal,Gandaki
+27.0465,84.8772,Birgunj,Nepal,Madhesh
+28.6689,80.6018,Mahendranagar,Nepal,Sudurpashchim
+28.5058,81.7719,Nepalgunj,Nepal,Lumbini
+27.6980,84.4357,Bharatpur,Nepal,Bagmati
+26.6711,87.6792,Damak,Nepal,Province 1
+28.9759,81.2518,Jumla,Nepal,Karnali
+27.3524,87.2172,Taplejung,Nepal,Province 1
+28.1667,85.3833,Langtang,Nepal,Bagmati
+28.8139,83.8772,Jomsom,Nepal,Gandaki
+27.6333,86.7333,Lukla,Nepal,Province 1
+28.7500,84.0000,Manang,Nepal,Gandaki
+27.3601,87.6783,Ilam,Nepal,Province 1
+28.3941,84.1240,Lamjung,Nepal,Gandaki
+27.6141,85.5377,Nagarkot,Nepal,Bagmati
+28.2719,83.5932,Sarangkot,Nepal,Gandaki
+27.6833,85.4167,Dhulikhel,Nepal,Bagmati
+27.4833,85.0333,Hetauda,Nepal,Bagmati
+28.6500,80.5833,Kanchanpur,Nepal,Sudurpashchim
+28.1300,81.2800,Bardiya,Nepal,Lumbini
+27.0500,85.0500,Janakpur,Nepal,Madhesh
+26.8100,87.2800,Sunsari,Nepal,Province 1
+27.7000,85.3333,Kirtipur,Nepal,Bagmati
+28.3333,84.3333,Gorkha,Nepal,Gandaki
+28.9833,80.1667,Kailali,Nepal,Sudurpashchim
+28.9167,80.1667,Tikapur,Nepal,Sudurpashchim
+28.2167,83.9833,Lekhnath,Nepal,Gandaki
+27.6667,84.4333,Ratnanagar,Nepal,Bagmati
+28.1333,82.2833,Tulsipur,Nepal,Lumbini
+28.0500,82.4833,Ghorahi,Nepal,Lumbini
+27.6833,83.4333,Butwal,Nepal,Lumbini
+27.5167,83.7500,Siddharthanagar,Nepal,Lumbini
+27.6833,84.4333,Narayanghat,Nepal,Bagmati
+26.8800,87.2800,Itahari,Nepal,Province 1
+26.6300,87.3500,Bhadrapur,Nepal,Province 1
+26.7300,87.4500,Birtamod,Nepal,Province 1
+26.7900,87.2800,Dhankuta,Nepal,Province 1
+27.2100,87.8800,Phidim,Nepal,Province 1
+27.1500,87.0500,Khandbari,Nepal,Province 1
+26.5300,86.7200,Rajbiraj,Nepal,Madhesh
+26.7200,85.9000,Lahan,Nepal,Madhesh
+26.8600,85.7800,Siraha,Nepal,Madhesh
+26.7200,85.3600,Jaleshwar,Nepal,Madhesh
+26.8500,85.0200,Gaur,Nepal,Madhesh
+26.9800,85.2500,Malangwa,Nepal,Madhesh
+27.3800,85.5600,Kamalamai,Nepal,Bagmati
+27.2800,85.8900,Sindhuli,Nepal,Bagmati
+27.3800,85.0300,Bharatpur,Nepal,Bagmati
+27.5500,85.2500,Bidur,Nepal,Bagmati
+27.9700,85.1800,Dhunche,Nepal,Bagmati
+27.7500,85.2500,Banepa,Nepal,Bagmati
+27.6200,85.1400,Panauti,Nepal,Bagmati
+27.8700,84.6800,Gorkha,Nepal,Gandaki
+28.2100,83.9900,Waling,Nepal,Gandaki
+28.1400,84.0900,Syangja,Nepal,Gandaki
+28.3700,83.5300,Beni,Nepal,Gandaki
+28.2100,83.7500,Kushma,Nepal,Gandaki
+28.3600,83.4700,Baglung,Nepal,Gandaki
+28.1300,82.5100,Pyuthan,Nepal,Lumbini
+28.3800,82.4800,Rolpa,Nepal,Lumbini
+28.0400,81.6300,Kohalpur,Nepal,Lumbini
+28.1400,81.7900,Gulariya,Nepal,Lumbini
+28.5100,81.6200,Birendranagar,Nepal,Karnali
+29.2800,81.2000,Dailekh,Nepal,Karnali
+29.3600,81.0900,Kalikot,Nepal,Karnali
+29.5300,82.0800,Jumla,Nepal,Karnali
+29.4500,82.1300,Mugu,Nepal,Karnali
+29.2800,80.5800,Dadeldhura,Nepal,Sudurpashchim
+29.3700,80.9800,Doti,Nepal,Sudurpashchim
+29.5500,80.8200,Achham,Nepal,Sudurpashchim
+29.7300,80.5900,Bajhang,Nepal,Sudurpashchim
+29.8000,80.9800,Bajura,Nepal,Sudurpashchim
+22.5726,88.3639,Kolkata,India,West Bengal
+28.6139,77.2090,Delhi,India,Delhi
+19.0760,72.8777,Mumbai,India,Maharashtra
+13.0827,80.2707,Chennai,India,Tamil Nadu
+17.3850,78.4867,Hyderabad,India,Telangana
+12.9716,77.5946,Bangalore,India,Karnataka
+23.0225,72.5714,Ahmedabad,India,Gujarat
+26.9124,75.7873,Jaipur,India,Rajasthan
+25.5941,85.1376,Patna,India,Bihar
+30.7333,76.7794,Chandigarh,India,Chandigarh
+18.5204,73.8567,Pune,India,Maharashtra
+22.7196,75.8577,Indore,India,Madhya Pradesh
+23.2599,77.4126,Bhopal,India,Madhya Pradesh
+17.6868,83.2185,Visakhapatnam,India,Andhra Pradesh
+21.1702,72.8311,Surat,India,Gujarat
+26.8467,80.9462,Lucknow,India,Uttar Pradesh
+25.3176,82.9739,Varanasi,India,Uttar Pradesh
+22.5726,88.3639,Kolkata,India,West Bengal
+17.6868,83.2185,Visakhapatnam,India,Andhra Pradesh
+11.0168,76.9558,Coimbatore,India,Tamil Nadu
+31.6340,74.8723,Amritsar,India,Punjab
+25.5941,85.1376,Patna,India,Bihar
+26.1445,91.7362,Guwahati,India,Assam
+23.8315,91.2868,Agartala,India,Tripura
+34.0837,74.7973,Srinagar,India,Jammu and Kashmir
+27.1767,78.0081,Agra,India,Uttar Pradesh
+30.3165,78.0322,Dehradun,India,Uttarakhand
+22.3072,73.1812,Vadodara,India,Gujarat
+21.1458,79.0882,Nagpur,India,Maharashtra
+16.5062,80.6480,Vijayawada,India,Andhra Pradesh
+9.9312,76.2673,Kochi,India,Kerala
+8.5241,76.9366,Thiruvananthapuram,India,Kerala
+11.6643,92.7364,Port Blair,India,Andaman and Nicobar Islands
+15.2993,74.1240,Panaji,India,Goa
+20.2961,85.8245,Bhubaneswar,India,Odisha
+23.3441,85.3096,Ranchi,India,Jharkhand
+27.5330,95.3300,Dibrugarh,India,Assam
+24.7914,92.9916,Silchar,India,Assam
+24.8333,93.9500,Imphal,India,Manipur
+25.5700,91.8800,Shillong,India,Meghalaya
+23.7275,92.7178,Aizawl,India,Mizoram
+26.1584,91.7694,Dispur,India,Assam
+27.3300,88.6200,Gangtok,India,Sikkim
+26.4670,80.3500,Kanpur,India,Uttar Pradesh
+28.4089,77.3178,Faridabad,India,Haryana
+28.4595,77.0266,Gurgaon,India,Haryana
+31.1471,75.3412,Jalandhar,India,Punjab
+26.2006,92.9376,Nagaon,India,Assam
+24.8000,93.9500,Imphal,India,Manipur
+25.9100,93.7300,Kohima,India,Nagaland
+27.4728,94.9120,Jorhat,India,Assam
+26.7400,94.2000,Golaghat,India,Assam
+26.1900,91.7400,Guwahati,India,Assam
+23.8300,91.2800,Agartala,India,Tripura
+24.8300,92.7900,Silchar,India,Assam
+25.5700,91.8800,Shillong,India,Meghalaya
+23.7300,92.7200,Aizawl,India,Mizoram
+27.3300,88.6200,Gangtok,India,Sikkim
+23.3700,77.1300,Bhopal,India,Madhya Pradesh
+22.7200,75.8600,Indore,India,Madhya Pradesh
+21.8300,76.3500,Khandwa,India,Madhya Pradesh
+23.1700,79.9500,Jabalpur,India,Madhya Pradesh
+22.4700,78.4300,Chhindwara,India,Madhya Pradesh
+23.8300,78.7300,Sagar,India,Madhya Pradesh
+24.5300,80.8300,Satna,India,Madhya Pradesh
+25.4500,78.5700,Jhansi,India,Uttar Pradesh
+25.3300,83.0000,Varanasi,India,Uttar Pradesh
+25.4500,81.8500,Allahabad,India,Uttar Pradesh
+27.8800,78.0800,Aligarh,India,Uttar Pradesh
+29.9600,78.1600,Haridwar,India,Uttarakhand
+30.3200,78.0300,Dehradun,India,Uttarakhand
+30.7300,76.7800,Chandigarh,India,Chandigarh
+31.6300,74.8700,Amritsar,India,Punjab
+30.9000,75.8500,Ludhiana,India,Punjab
+32.7200,74.8700,Jammu,India,Jammu and Kashmir
+34.0800,74.8000,Srinagar,India,Jammu and Kashmir
+33.7800,76.5700,Leh,India,Ladakh
+32.2400,77.1900,Manali,India,Himachal Pradesh
+31.1000,77.1700,Shimla,India,Himachal Pradesh
+32.2200,76.3200,Dharamshala,India,Himachal Pradesh
+36.0190,129.3434,Pohang,South Korea,North Gyeongsang
+37.8713,127.7300,Chuncheon,South Korea,Gangwon
+35.5384,129.3114,Ulsan,South Korea,Ulsan
+47.9138,106.9220,Ulaanbaatar,Mongolia,Ulaanbaatar
+49.9935,92.0573,Ölgii,Mongolia,Bayan-Ölgii
+43.6532,51.1985,Aktau,Kazakhstan,Mangystau
+51.1694,71.4491,Nur-Sultan,Kazakhstan,Akmola
+43.2220,76.8512,Almaty,Kazakhstan,Almaty
+41.2995,69.2401,Tashkent,Uzbekistan,Tashkent
+39.6778,66.9465,Samarkand,Uzbekistan,Samarkand
+40.3833,71.8000,Andijan,Uzbekistan,Andijan
+38.8561,65.7861,Bukhara,Uzbekistan,Bukhara
+42.4784,59.6166,Nukus,Uzbekistan,Karakalpakstan
+37.9500,58.3833,Ashgabat,Turkmenistan,Ahal
+39.0700,63.5800,Mary,Turkmenistan,Mary
+42.4500,59.6000,Nukus,Uzbekistan,Karakalpakstan
+40.5333,72.8000,Osh,Kyrgyzstan,Osh
+42.8747,74.5698,Bishkek,Kyrgyzstan,Bishkek
+38.5358,68.7791,Dushanbe,Tajikistan,Districts of Republican Subordination
+40.2775,69.6514,Khujand,Tajikistan,Sughd
+37.8833,69.7833,Khorugh,Tajikistan,Gorno-Badakhshan
+34.5553,69.2075,Kabul,Afghanistan,Kabul
+36.7000,67.1167,Mazar-i-Sharif,Afghanistan,Balkh
+34.3380,62.2030,Herat,Afghanistan,Herat
+31.6100,65.7100,Kandahar,Afghanistan,Kandahar
+36.7170,68.8670,Kunduz,Afghanistan,Kunduz
+34.4300,70.4500,Jalalabad,Afghanistan,Nangarhar
+33.5500,68.4200,Ghazni,Afghanistan,Ghazni
+31.5800,64.3700,Lashkar Gah,Afghanistan,Helmand
+35.9200,64.7700,Meymaneh,Afghanistan,Faryab
+36.2500,65.9300,Sar-e Pol,Afghanistan,Sar-e Pol
+36.7000,69.5300,Fayzabad,Afghanistan,Badakhshan
+34.0000,69.1700,Gardez,Afghanistan,Paktia
+33.3300,69.9200,Khost,Afghanistan,Khost
+33.9900,67.8300,Bamyan,Afghanistan,Bamyan
+35.9300,64.7700,Andkhoy,Afghanistan,Faryab
+34.8300,67.8300,Bamiyan,Afghanistan,Bamyan
+36.7300,67.1200,Balkh,Afghanistan,Balkh
+34.8300,67.8300,Chaghcharan,Afghanistan,Ghor
+35.9200,64.7700,Farah,Afghanistan,Farah
+36.7300,67.1200,Feyzabad,Afghanistan,Badakhshan
+34.4300,70.4500,Jalalabad,Afghanistan,Nangarhar
+31.6100,65.7100,Kandahar,Afghanistan,Kandahar
+34.5300,69.1700,Kabul,Afghanistan,Kabul
+36.7300,67.1200,Mazar-i-Sharif,Afghanistan,Balkh
+35.9200,64.7700,Meymaneh,Afghanistan,Faryab
+36.7300,67.1200,Pol-e Khomri,Afghanistan,Baghlan
+36.7300,67.1200,Sheberghan,Afghanistan,Jowzjan
+36.7300,67.1200,Taloqan,Afghanistan,Takhar
+31.5800,65.7100,Zaranj,Afghanistan,Nimruz
+33.8500,35.5200,Beirut,Lebanon,Beirut
+34.4300,35.8300,Tripoli,Lebanon,North
+33.2700,35.2000,Tyre,Lebanon,South
+33.5400,35.3800,Sidon,Lebanon,South
+33.8400,35.9000,Zahle,Lebanon,Beqaa
+33.3600,35.4800,Nabatieh,Lebanon,Nabatieh
+34.0000,36.2100,Baalbek,Lebanon,Baalbek-Hermel
+33.1400,35.6500,Marjayoun,Lebanon,Nabatieh
+34.2500,35.6500,Byblos,Lebanon,Mount Lebanon
+33.8100,35.5900,Aley,Lebanon,Mount Lebanon
+33.5400,35.3800,Jezzine,Lebanon,South
+33.8400,35.9000,Hermel,Lebanon,Baalbek-Hermel
+33.8400,35.9000,Rachaiya,Lebanon,Beqaa
+33.8400,35.9000,West Bekaa,Lebanon,Beqaa
+33.8400,35.9000,Batroun,Lebanon,North
+33.8400,35.9000,Bsharri,Lebanon,North
+33.8400,35.9000,Koura,Lebanon,North
+33.8400,35.9000,Miniyeh-Danniyeh,Lebanon,North
+33.8400,35.9000,Zgharta,Lebanon,North
+33.8400,35.9000,Baabda,Lebanon,Mount Lebanon
+33.8400,35.9000,Chouf,Lebanon,Mount Lebanon
+33.8400,35.9000,Keserwan,Lebanon,Mount Lebanon
+33.8400,35.9000,Matn,Lebanon,Mount Lebanon
+33.8400,35.9000,Bint Jbeil,Lebanon,Nabatieh
+33.8400,35.9000,Hasbaya,Lebanon,Nabatieh
+33.8400,35.9000,Bent Jbail,Lebanon,Nabatieh
+33.8400,35.9000,Akkar,Lebanon,Akkar
